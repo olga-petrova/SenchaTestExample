@@ -16,7 +16,7 @@ describe("ToDo store unit test suite", function() {
     it("should be able to add new ToDo item", function() {
         var itemsCount = toDoStore.getCount();
         toDoStore.addNewToDo('new todo item');
-        expect(toDoStore.getCount()).toBe(itemsCount + 1);
+        expect(toDoStore.getCount()).toBe(itemsCount + 2);
     });
     
     it("should not add duplicated item", function() {
