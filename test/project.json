@@ -1,0 +1,32 @@
+{
+    "framework": "jasmine",
+    "libs": [],
+    "coverageFilters": [],
+    "scenarios": [
+        {
+            "libs": [],
+            "coverageFilters": [],
+            "directory": "unit",
+            "name": "Unit Tests",
+            "profile": "classic",
+            "globals": "*",
+            "launch": false
+        },
+        {
+            "libs": [],
+            "coverageFilters": [],
+            "directory": "UI Unit Tests",
+            "name": "UI Unit Tests",
+            "globals": "*"
+        },
+        {
+            "libs": [],
+            "coverageFilters": [],
+            "launch": true,
+            "globals": "*",
+            "directory": "End-To-End Tests",
+            "name": "End-To-End Tests"
+        }
+    ],
+    "globals": "Admin"
+}
