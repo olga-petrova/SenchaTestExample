@@ -1,25 +1,35 @@
 describe("ToDo list integration test", function() {
         
     it("should add new tem", function() {
-        ST.play([
-            { type: "click", target: "todo #addNewItemButton" },
-            { type: "type", target: "todowindow textfield", text: "My new ToDo" },
-            { type: "tap", target: "todowindow #saveButton" },
-            { function (grid) {
-                expect(grid.getStore().findRecord('task', "My new ToDo")).toBeTruthy();   
-            }, target: "todo"}
+    
+       
+    ST.play([
+        { type: "tap", target: "button[itemId=\"addNewItemButton\"]", x: 31, y: 23 },
+        { type: "type", target: "todowindow textfield", text: "Type test" },
+        { fn: function () {
+            var textfield = this.targetEl.getComponent();
+            expect(textfield.getValue()).toBe("Type test");
+        }, target: "todowindow textfield"}
+        
         ]);
+        
     });
     
-    it("should do not add new tem", function() {
-        ST.play([
-            { type: "click", target: "todo #addNewItemButton" },
-            { type: "type", target: "todowindow textfield", text: "My new ToDo" },
-            { type: "tap", target: "todowindow #saveButton" },
-            { function (grid) {
-                expect(grid.getStore().findRecord('task', "My new ToDo")).toBeFalsy();   
-            }, target: "todo"}
-        ]);
-    });
+    
     
 });
+
+ /*ST.play([
+        { type: "tap", target: "button[itemId=\"addNewItemButton\"]", x: 31, y: 23 },
+        { type: "type", target: "todowindow textfield", text: "Type test" },
+        { fn: function () {
+            var textfield = this.targetEl.getComponent();
+            expect(textfield.getValue()).toBe("Type test");
+        }, target: "todowindow textfield"}
+        /*{ type: "tap", target: "button[itemId=\"saveButton\"]", x: 26, y: 19 },
+        { fn: function () {
+            var grid = this.targetEl.getComponent();
+            expect(grid.getStore().findRecord('task', "New ToDo")).toBeTruthy();
+        }, target: "todo grid"}
+        ]);*/
+    

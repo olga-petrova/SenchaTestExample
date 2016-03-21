@@ -18,6 +18,11 @@ describe("TODO window UI unit test suite", function() {
     it('ToDo window should open', function () {
         expect(toDoWindow.el).toBeTruthy();
     });
+    
+    it("ToDo window should match the expected screenshot", function(done) {
+        ST.screenshot('todowindow', done);
+    }, 30000);
+
         
     it('ToDo window should close on cancel button click', function (done) {
         toDoWindow.on('close', done);
