@@ -47,7 +47,6 @@ touch/
 node_modules/
 dist/
 .sencha_backup/
-.sencha
 *slicer-temp*
 gwt-unitCache
 .sass-cache/
