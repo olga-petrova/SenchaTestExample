@@ -33,12 +33,17 @@
                     ]
                 },
                 {
-                    "name": "WebDriverPool",
+                    "name": "WebDriver",
                     "type": "generic",
                     "host": "127.0.0.1",
                     "port": 4444,
                     "autoStartTunnel": false,
-                    "pools": []
+                    "pools": [
+                        {
+                            "name": "WebDriverPool",
+                            "path": "../../SenchaTestOfficialDemo/SenchaTestDemo/AdminDashboard/WebDriverPool.json"
+                        }
+                    ]
                 }
             ]
         },
